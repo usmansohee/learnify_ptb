@@ -1,7 +1,10 @@
 package com.learnify.ptb;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,6 +24,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle toggle;
     private NavController navController;
     private AppBarConfiguration appBarConfiguration;
+
+    // Constants for URLs
+    private static final String PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.learnify.ptb";
+    private static final String PLAY_STORE_RATE_URL = "https://play.google.com/store/apps/details?id=com.learnify.ptb&pli=1";
+    private static final String PLAY_STORE_DEVELOPER_URL = "https://play.google.com/store/apps/developer?id=Learnify+Dev";
+    private static final String FEEDBACK_EMAIL = "illuminatorsstudyclub92@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,19 +89,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         
         try {
-            Bundle args = new Bundle();
             if (id == R.id.nav_class9) {
+                Bundle args = new Bundle();
                 args.putInt("class_number", 9);
+                
+                // Clear the back stack before navigating
+                navController.popBackStack(R.id.homeFragment, false);
+                navController.navigate(R.id.action_home_to_subjects, args);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            } else if (id == R.id.nav_share_app) {
+                shareApp();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            } else if (id == R.id.nav_send_feedback) {
+                sendFeedback();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            } else if (id == R.id.nav_rate_app) {
+                rateApp();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            } else if (id == R.id.nav_other_apps) {
+                openOtherApps();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            } else if (id == R.id.nav_exit) {
+                exitApp();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
             }
-//            else if (id == R.id.nav_class2) {
-//                args.putInt("class_number", 2);
-//            }
-
-            // Clear the back stack before navigating
-            navController.popBackStack(R.id.homeFragment, false);
-            navController.navigate(R.id.action_home_to_subjects, args);
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
+            
+            return false;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -106,5 +134,78 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+    
+    /**
+     * Share the app with other users
+     */
+    private void shareApp() {
+        try {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this amazing Math learning app: " + PLAY_STORE_URL);
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Unable to share app", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    /**
+     * Open email app to send feedback
+     */
+    private void sendFeedback() {
+        try {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+            emailIntent.setData(Uri.parse("mailto:" + FEEDBACK_EMAIL));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name));
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi,\n\nI would like to provide feedback about your app.\n\n");
+            
+            if (emailIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(emailIntent);
+            } else {
+                Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Unable to open email app", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    /**
+     * Open Play Store rating page
+     */
+    private void rateApp() {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(PLAY_STORE_RATE_URL));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Unable to open Play Store", Toast.LENGTH_SHORT).show();
+        }
+    }
+    
+    /**
+     * Open Play Store developer page
+     */
+    private void openOtherApps() {
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(PLAY_STORE_DEVELOPER_URL));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Unable to open Play Store", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Exit the app
+     */
+    private void exitApp() {
+        finish();
+        System.exit(0);
     }
 }

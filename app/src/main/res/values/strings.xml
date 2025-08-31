@@ -17,4 +17,11 @@
     <string name="welcome_image">welcome_image</string>
     <string name="welcome">Welcome</string>
     <string name="welcome_bottom">Dedicated to parents and hardworking students</string>
+    
+    <!-- New Sidebar Menu Items -->
+    <string name="share_app">Share App</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="rate_app">Rate App</string>
+    <string name="other_apps">Other Apps</string>
+    <string name="exit_app">Exit App</string>
 </resources>

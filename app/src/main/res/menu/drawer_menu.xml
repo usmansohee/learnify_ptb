@@ -13,4 +13,35 @@
 <!--            android:icon="@android:drawable/ic_menu_today"-->
 <!--            android:title="Class 2" />-->
     </group>
+    
+    <!-- App Actions Group -->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_share_app"
+            android:icon="@android:drawable/ic_menu_share"
+            android:title="@string/share_app" />
+            
+        <item
+            android:id="@+id/nav_send_feedback"
+            android:icon="@android:drawable/ic_menu_send"
+            android:title="@string/send_feedback" />
+            
+        <item
+            android:id="@+id/nav_rate_app"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="@string/rate_app" />
+            
+        <item
+            android:id="@+id/nav_other_apps"
+            android:icon="@android:drawable/ic_menu_more"
+            android:title="@string/other_apps" />
+    </group>
+    
+    <!-- Exit Button Group -->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:title="@string/exit_app" />
+    </group>
 </menu> 
