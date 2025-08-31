@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity=""
+    android:layout_marginTop="30dp"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+<!--    <Button-->
+<!--        android:id="@+id/mathEnglishButton"-->
+<!--        style="@style/ShapeAppearance.Material3.Corner.Full"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:text="@string/math_english_button_text"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/mathUrduButton"-->
+<!--        style="@style/ShapeAppearance.Material3.Corner.Full"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:text="@string/math_urdu_button_text"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textSize="16sp"-->
+<!--        android:textStyle="bold"-->
+<!--        />-->
+
+    <Button
+        android:id="@+id/mathSolutionButton"
+        style="@style/ShapeAppearance.Material3.Corner.Full"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/math_solution_button_text"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+    />
+
+<!--    <Button-->
+<!--        android:id="@+id/englishButton"-->
+<!--        style="@style/ShapeAppearance.Material3.Corner.Full"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        android:text="English"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+
+</LinearLayout> 

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Math 9th PTB- New Syllabus 2025</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="step_1">testers-community@googlegroups.com</string>
+    <string name="math_english_button_text">Maths 9th PTB New Textbook (English)</string>
+    <string name="math_urdu_button_text">Maths 9th PTB New Textbook (Urdu)</string>
+    <string name="math_solution_button_text">Maths 9th PTB New Textbook Solutions</string>
+    <string name="welcome_image">welcome_image</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_bottom">Dedicated to parents and hardworking students</string>
+    ">
+</resources>
