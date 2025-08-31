@@ -24,13 +24,6 @@
         android:name="com.learnify.ptb.fragments.SubjectsFragment"
         android:label="Subjects">
         <action
-            android:id="@+id/action_subjects_to_units"
-            app:destination="@id/unitsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
             android:id="@+id/action_subjects_to_webview"
             app:destination="@id/webViewFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
@@ -40,19 +33,6 @@
         <action
             android:id="@+id/action_subjects_to_chapter_wise_units"
             app:destination="@id/chapterWiseUnitsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/unitsFragment"
-        android:name="com.learnify.ptb.fragments.UnitsFragment"
-        android:label="Units">
-        <action
-            android:id="@+id/action_units_to_reading"
-            app:destination="@id/readingFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"

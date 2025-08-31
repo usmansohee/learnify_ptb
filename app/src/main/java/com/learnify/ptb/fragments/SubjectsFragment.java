@@ -37,14 +37,6 @@ public class SubjectsFragment extends Fragment {
             classNumber = getArguments().getInt("class_number");
         }
 
-        Button mathSolutionsButton = view.findViewById(R.id.mathSolutionButton);
-//        Button mathEnglishButton = view.findViewById(R.id.mathEnglishButton);
-//        Button mathUrduButton = view.findViewById(R.id.mathUrduButton);
-
-        mathSolutionsButton.setOnClickListener(v -> handleSubjectSolutionsClick("Mathematics"));
-//        mathEnglishButton.setOnClickListener(v -> handleSubjectClick("Mathematics English"));
-//        mathUrduButton.setOnClickListener(v -> handleSubjectClick("Mathematics Urdu"));
-
         // Set up the Chapter-wise Units button
         Button chapterWiseUnitsButton = view.findViewById(R.id.chapterWiseUnitsButton);
         chapterWiseUnitsButton.setOnClickListener(v -> {
@@ -69,24 +61,7 @@ public class SubjectsFragment extends Fragment {
 
     private void updateTitle() {
         if (getActivity() instanceof AppCompatActivity && classNumber > 0) {
-            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Class " + classNumber + " Subjects");
-        }
-    }
-
-    private void handleSubjectSolutionsClick(String subject) {
-        try {
-            Log.d(TAG, "Subject clicked: " + subject);
-            Snackbar.make(requireView(), "" + subject + " units", Snackbar.LENGTH_SHORT).show();
-            
-            Bundle bundle = new Bundle();
-            bundle.putInt("class_number", classNumber);
-            bundle.putString("subject", subject);
-            
-            navController.navigate(R.id.action_subjects_to_units, bundle);
-        } catch (Exception e) {
-            Log.e(TAG, "Error navigating to UnitsFragment", e);
-            Snackbar.make(requireView(), "Error loading units: " + e.getMessage(), Snackbar.LENGTH_LONG).show();
-            e.printStackTrace();
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("Class " + classNumber);
         }
     }
 

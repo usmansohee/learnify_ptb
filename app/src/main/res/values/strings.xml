@@ -11,12 +11,10 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="step_1">testers-community@googlegroups.com</string>
-    <string name="math_english_button_text">Maths 9th PTB New Textbook (English)</string>
-    <string name="math_urdu_button_text">Maths 9th PTB New Textbook (Urdu)</string>
-    <string name="math_solution_button_text">Maths 9th PTB New Textbook Solutions</string>
     <string name="welcome_image">welcome_image</string>
     <string name="welcome">Welcome</string>
     <string name="welcome_bottom">Dedicated to parents and hardworking students</string>
+    <string name="math_solution_button_text">Maths 9th PTB New Textbook Solutions</string>
     
     <!-- New Sidebar Menu Items -->
     <string name="share_app">Share App</string>

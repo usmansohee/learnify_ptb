@@ -110,6 +110,12 @@ public class ChapterWiseUnitsFragment extends Fragment {
     private String getUnitFolderName(String unit) {
         // Convert unit names to folder names (lowercase, replace spaces with underscores)
         String unitName = unit.split(":")[1].trim();
+        
+        // Special case for Unit 6 due to misspelled folder name
+        if (unitName.equals("Trigonometry")) {
+            return "trignometry";
+        }
+        
         return unitName.toLowerCase().replace(" ", "_");
     }
 

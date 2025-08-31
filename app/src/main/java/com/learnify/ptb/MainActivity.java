@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Set up the navigation view
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        
         // Set up the NavController
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.nav_host_fragment_content_main);
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment,
                 R.id.subjectsFragment,
-                R.id.unitsFragment,
                 R.id.readingFragment,
                 R.id.webViewFragment,
                 R.id.chapterWiseUnitsFragment,
@@ -157,19 +156,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private void sendFeedback() {
         try {
-            Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-            emailIntent.setData(Uri.parse("mailto:" + FEEDBACK_EMAIL));
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name));
-            emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi,\n\nI would like to provide feedback about your app.\n\n");
+            // Try to open Gmail directly first
+            Intent gmailIntent = new Intent(Intent.ACTION_SENDTO);
+            gmailIntent.setData(Uri.parse("mailto:" + FEEDBACK_EMAIL));
+            gmailIntent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for " + getString(R.string.app_name));
+            gmailIntent.putExtra(Intent.EXTRA_TEXT, "Hi,\n\nI would like to provide feedback about your app.\n\n");
             
-            if (emailIntent.resolveActivity(getPackageManager()) != null) {
-                startActivity(emailIntent);
-            } else {
-                Toast.makeText(this, "No email app found", Toast.LENGTH_SHORT).show();
-            }
+            // This will only show email apps, not general share apps
+            startActivity(gmailIntent);
+            
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(this, "Unable to open email app", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Unable to open email app: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
     
