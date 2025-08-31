@@ -56,9 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.homeFragment,
                 R.id.subjectsFragment,
-                R.id.unitsFragment,
-                R.id.readingFragment,
-                R.id.webViewFragment,
                 R.id.chapterWiseUnitsFragment,
                 R.id.chapterFilesFragment
         )
@@ -80,19 +77,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         
         try {
-            Bundle args = new Bundle();
-            if (id == R.id.nav_class9) {
+            if (id == R.id.nav_exit) {
+                // Exit the application
+                finish();
+                System.exit(0);
+                return true;
+            } else if (id == R.id.nav_class9) {
+                Bundle args = new Bundle();
                 args.putInt("class_number", 9);
+                
+                // Clear the back stack before navigating
+                navController.popBackStack(R.id.homeFragment, false);
+                navController.navigate(R.id.action_home_to_subjects, args);
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
             }
 //            else if (id == R.id.nav_class2) {
 //                args.putInt("class_number", 2);
 //            }
 
-            // Clear the back stack before navigating
-            navController.popBackStack(R.id.homeFragment, false);
-            navController.navigate(R.id.action_home_to_subjects, args);
-            drawerLayout.closeDrawer(GravityCompat.START);
-            return true;
+            return false;
         } catch (Exception e) {
             e.printStackTrace();
             return false;

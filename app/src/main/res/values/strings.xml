@@ -14,6 +14,7 @@
     <string name="math_english_button_text">Maths 9th PTB New Textbook (English)</string>
     <string name="math_urdu_button_text">Maths 9th PTB New Textbook (Urdu)</string>
     <string name="math_solution_button_text">Maths 9th PTB New Textbook Solutions</string>
+    <string name="exit_application">Exit</string>
     <string name="welcome_image">welcome_image</string>
     <string name="welcome">Welcome</string>
     <string name="welcome_bottom">Dedicated to parents and hardworking students</string>

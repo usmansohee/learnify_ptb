@@ -16,27 +16,12 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-
     </fragment>
 
     <fragment
         android:id="@+id/subjectsFragment"
         android:name="com.learnify.ptb.fragments.SubjectsFragment"
         android:label="Subjects">
-        <action
-            android:id="@+id/action_subjects_to_units"
-            app:destination="@id/unitsFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-        <action
-            android:id="@+id/action_subjects_to_webview"
-            app:destination="@id/webViewFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_subjects_to_chapter_wise_units"
             app:destination="@id/chapterWiseUnitsFragment"
@@ -46,41 +31,11 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
-    <fragment
-        android:id="@+id/unitsFragment"
-        android:name="com.learnify.ptb.fragments.UnitsFragment"
-        android:label="Units">
-        <action
-            android:id="@+id/action_units_to_reading"
-            app:destination="@id/readingFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/readingFragment"
-        android:name="com.learnify.ptb.fragments.ReadingFragment"
-        android:label="Reading" />
-
-    <fragment
-        android:id="@+id/webViewFragment"
-        android:name="com.learnify.ptb.fragments.WebViewFragment"
-        android:label="WebView">
-        <argument
-            android:name="url"
-            app:argType="string" />
-        <argument
-            android:name="title"
-            app:argType="string" />
-    </fragment>
-
     <!-- New Chapter-wise Units Fragment -->
     <fragment
         android:id="@+id/chapterWiseUnitsFragment"
         android:name="com.learnify.ptb.fragments.ChapterWiseUnitsFragment"
-        android:label="Units">
+        android:label="Chapter-wise Units">
         <action
             android:id="@+id/action_chapter_wise_units_to_chapter_files"
             app:destination="@id/chapterFilesFragment"
@@ -103,5 +58,10 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
+    <fragment
+        android:id="@+id/readingFragment"
+        android:name="com.learnify.ptb.fragments.ReadingFragment"
+        android:label="Reading" />
 
 </navigation>
