@@ -58,7 +58,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.id.subjectsFragment,
                 R.id.unitsFragment,
                 R.id.readingFragment,
-                R.id.webViewFragment
+                R.id.webViewFragment,
+                R.id.chapterWiseUnitsFragment,
+                R.id.chapterFilesFragment
         )
         .setDrawerLayout(drawerLayout)
         .build();

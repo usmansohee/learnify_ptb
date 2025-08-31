@@ -46,6 +46,28 @@
         android:textStyle="bold"
     />
 
+    <!-- Horizontal Separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- Chapter-wise Units Button -->
+    <Button
+        android:id="@+id/chapterWiseUnitsButton"
+        style="@style/ShapeAppearance.Material3.Corner.Full"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/math_solution_button_text"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 <!--    <Button-->
 <!--        android:id="@+id/englishButton"-->
 <!--        style="@style/ShapeAppearance.Material3.Corner.Full"-->

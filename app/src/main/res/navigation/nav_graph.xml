@@ -16,6 +16,7 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
     </fragment>
 
     <fragment
@@ -32,6 +33,13 @@
         <action
             android:id="@+id/action_subjects_to_webview"
             app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_subjects_to_chapter_wise_units"
+            app:destination="@id/chapterWiseUnitsFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -66,6 +74,34 @@
         <argument
             android:name="title"
             app:argType="string" />
+    </fragment>
+
+    <!-- New Chapter-wise Units Fragment -->
+    <fragment
+        android:id="@+id/chapterWiseUnitsFragment"
+        android:name="com.learnify.ptb.fragments.ChapterWiseUnitsFragment"
+        android:label="Units">
+        <action
+            android:id="@+id/action_chapter_wise_units_to_chapter_files"
+            app:destination="@id/chapterFilesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <!-- New Chapter Files Fragment -->
+    <fragment
+        android:id="@+id/chapterFilesFragment"
+        android:name="com.learnify.ptb.fragments.ChapterFilesFragment"
+        android:label="Chapter Files">
+        <action
+            android:id="@+id/action_chapter_files_to_reading"
+            app:destination="@id/readingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
 </navigation>

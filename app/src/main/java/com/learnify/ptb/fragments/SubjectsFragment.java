@@ -44,6 +44,13 @@ public class SubjectsFragment extends Fragment {
         mathSolutionsButton.setOnClickListener(v -> handleSubjectSolutionsClick("Mathematics"));
 //        mathEnglishButton.setOnClickListener(v -> handleSubjectClick("Mathematics English"));
 //        mathUrduButton.setOnClickListener(v -> handleSubjectClick("Mathematics Urdu"));
+
+        // Set up the Chapter-wise Units button
+        Button chapterWiseUnitsButton = view.findViewById(R.id.chapterWiseUnitsButton);
+        chapterWiseUnitsButton.setOnClickListener(v -> {
+            // Navigate to chapter-wise units fragment
+            navController.navigate(R.id.action_subjects_to_chapter_wise_units);
+        });
     }
 
     @Override
