@@ -189,6 +189,7 @@ public class ChapterFilesFragment extends Fragment {
                 "unit_no_9_similar_figures_exercise_number_9_1.pdf",
                 "unit_no_9_similar_figures_exercise_number_9_2.pdf",
                 "unit_no_9_similar_figures_exercise_number_9_3.pdf",
+                "unit_no_9_similar_figures_exercise_number_9_4.pdf",
                 "unit_no_9_similar_figures_review_exercise_number_9.pdf",
                 "unit_no_9_similar_figures_tests.pdf"
             );
@@ -238,6 +239,7 @@ public class ChapterFilesFragment extends Fragment {
     /**
      * Convert raw file name to user-friendly display label
      * Example: "unit_no_13_probability_basic_concepts.pdf" -> "Probability Basic Concepts"
+     * Example: "unit_no_1_real_numbers_exercise_number_1_1.pdf" -> "Exercise Number 1.1"
      */
     private String getDisplayLabel(String fileName) {
         try {
@@ -247,8 +249,11 @@ public class ChapterFilesFragment extends Fragment {
             // Remove the unit_no_X_ prefix
             String nameWithoutPrefix = nameWithoutExt.replaceAll("^unit_no_\\d+_", "");
             
-            // Replace underscores with spaces
-            String nameWithSpaces = nameWithoutPrefix.replace("_", " ");
+            // Handle exercise numbers specifically - convert "number_X_Y" to "number X.Y"
+            String nameWithExerciseNumbers = nameWithoutPrefix.replaceAll("number_(\\d+)_(\\d+)", "number $1.$2");
+            
+            // Replace remaining underscores with spaces
+            String nameWithSpaces = nameWithExerciseNumbers.replace("_", " ");
             
             // Convert to proper case (first letter of each word capitalized)
             String[] words = nameWithSpaces.split(" ");
